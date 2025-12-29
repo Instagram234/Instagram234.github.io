@@ -1,0 +1,84 @@
+* {
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    background-color: #0f1c24;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 360px;
+    padding: 20px;
+    text-align: center;
+}
+
+.language {
+    color: #aaa;
+    margin-bottom: 30px;
+}
+
+.logo {
+    width: 80px;
+    margin-bottom: 30px;
+}
+
+input {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 12px;
+    border-radius: 10px;
+    border: 1px solid #2a3b47;
+    background-color: #1c2b36;
+    color: #fff;
+    font-size: 15px;
+}
+
+input::placeholder {
+    color: #8fa3b3;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 14px;
+    border-radius: 999px;
+    border: none;
+    background-color: #1a7cff;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.forgot {
+    display: block;
+    margin: 18px 0;
+    color: #cfd9df;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.create-btn {
+    width: 100%;
+    padding: 14px;
+    border-radius: 999px;
+    border: 2px solid #1a7cff;
+    background: transparent;
+    color: #1a7cff;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 40px;
+}
+
+.meta {
+    margin-top: 25px;
+    color: #888;
+    font-size: 13px;
+}
